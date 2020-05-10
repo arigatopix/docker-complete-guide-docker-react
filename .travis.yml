@@ -7,3 +7,13 @@ before_install:
 
 script:
   - docker run arigatopix/docker-react-course npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'southeast-1' # อยู่ใน url
+  app: 'docker-react-course'
+  env: 'DockerReactCourse-env'
+  bucket_name: 'elasticbeanstalk-ap-southeast-1-402693179605' # เอาไว้เก็บ file บน S3
+  bucket_path: 'docker-react-course' # folder เก็บ file ใช้อันเดียวกับ app name
+  on:
+    branch: master # บอก travis ว่าให้ deploy เมื่อถูก merge ใน master
