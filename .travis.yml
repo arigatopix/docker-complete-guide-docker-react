@@ -1,0 +1,9 @@
+sudo: required # super user permission required
+services:
+  - docker
+
+before_install:
+  - docker build -t arigatopix/docker-react-course -f Dockerfile.dev .
+
+script:
+  - docker run arigatopix/docker-react-course npm run test
