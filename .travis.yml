@@ -1,6 +1,5 @@
 language: generic
-sudo: required
-
+sudo: required # super user permission required
 services:
   - docker
 
@@ -12,13 +11,13 @@ script:
 
 deploy:
   provider: elasticbeanstalk
-  region: 'ap-southeast-1'
+  region: 'ap-southeast-1' # อยู่ใน url
   app: 'docker-react-course'
   env: 'DockerReactCourse-env'
-  bucket_name: 'elasticbeanstalk-ap-southeast-1-402693179605'
-  bucket_path: 'docker-react-course'
+  bucket_name: 'elasticbeanstalk-ap-southeast-1-402693179605' # เอาไว้เก็บ file บน S3
+  bucket_path: 'docker-react-course' # folder เก็บ file ใช้อันเดียวกับ app name
   on:
-    branch: master
+    branch: master # บอก travis ว่าให้ deploy เมื่อถูก merge ใน master
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
 #NEXT STEP
