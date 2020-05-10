@@ -11,7 +11,7 @@ script:
 
 deploy:
   provider: elasticbeanstalk
-  region: 'southeast-1' # อยู่ใน url
+  region: 'ap-southeast-1' # อยู่ใน url
   app: 'docker-react-course'
   env: 'DockerReactCourse-env'
   bucket_name: 'elasticbeanstalk-ap-southeast-1-402693179605' # เอาไว้เก็บ file บน S3
