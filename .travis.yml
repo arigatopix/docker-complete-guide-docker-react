@@ -1,3 +1,4 @@
+language: generic
 sudo: required # super user permission required
 services:
   - docker
@@ -17,3 +18,7 @@ deploy:
   bucket_path: 'docker-react-course' # folder เก็บ file ใช้อันเดียวกับ app name
   on:
     branch: master # บอก travis ว่าให้ deploy เมื่อถูก merge ใน master
+  access_key_id:
+    secure: '$AWS_ACESS_KEY'
+  secret_access_key:
+    secure: '$AWS_SECRET_KEY'
